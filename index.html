@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>EMITCamp</title>
+  <style>
+    body, ul, li, div, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+    body {
+      background-color: black;
+    }
+    .screen {
+      float: left;
+      width: 80%;
+      margin-right: -10%;
+      background: white;
+    }
+    .screen .slide {
+      width: 100%;
+      height: 100%;
+      min-height: 650px;
+      display: none;
+    }
+    .screen .slide.show {
+      display: block;
+    }
+    #prev, #next {
+      width: 10%;
+      height: 100%;
+      min-height: 650px;
+      cursor: pointer;
+    }
+    #prev {
+      float: left;
+    }
+    #next {
+      float: right;
+    }
+    .top {
+      width: 100%;
+      height: 124px;
+      position: relative;
+    }
+    .middle {
+      width: 100%;
+      height: 402px;
+      position: relative;
+    }
+    .bottom {
+      width: 100%;
+      height: 124px;
+      position: relative;
+    }
+    .left {
+      margin-left: 8%;
+    }
+    .center {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .slide h1 {
+      font-size: 60px;
+      padding-top: 30px;
+    }
+    .slide h2 {
+      font-size: 48px;
+      padding-top: 24px;
+    }
+    .slide h3 {
+      font-size: 36px;
+      padding-top: 18px;
+    }
+    .slide p {
+      font-size: 20px;
+      padding-top: 10px;
+    }
+    .slide a {
+      font-size: 20px;
+      text-decoration: none;
+      color: rgb(0, 0, 238);
+    }
+    .logo {
+      width: 10%;
+      position: absolute;
+      right: 0.618%;
+      bottom: 0;
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+    }
+    .top img {
+      width: 180px;
+      height: auto;
+      padding-top: 1em;
+    }
+    @media only screen and (min-width: 1367px) and (max-width: 1598px) {
+      .screen .slide, #prev, #next {
+        height: 730px !important;
+      }
+      .top {
+        height: 139px !important;
+      }
+      .middle {
+        height: 452px !important;
+      }
+      .bottom {
+        height: 139px !important;
+      }
+    }
+    @media only screen and (min-width: 1599px) {
+      .screen .slide, #prev, #next {
+        height: 810px !important;
+      }
+      .top {
+        height: 154px !important;
+      }
+      .middle {
+        height: 500px !important;
+      }
+      .bottom {
+        height: 154px !important;
+      }
+    }
+  </style>
+</head>
+<body onkeydown="hack(event)">
+  <div id="prev" class="btn"></div>
+
+  <div class="screen">
+    <div class="slide show">
+      <div class="top">
+        <div class="center"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+      <div class="middle">
+        <div class="center"><h1 style="padding-top: 2em;">面向对象的 JavaScript</h1></div>
+        <div class="center"><p>黄若星</p></div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+      </div>
+      <div class="middle">
+        <div class="center"><h1>面向对象是什么？</h1></div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="center">
+          <h2>理想 *_*</h2>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="center">
+          <img src="assets/dream.jpg" alt="dream">
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="center"><h2>现实 T^T</h2></div>
+      </div>
+      <div class="middle">
+        <div class="center">
+          <img src="assets/real.jpg" alt="real">
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="left">
+          <h2>为什么要 OOP？</h2>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="center">
+          <img src="assets/oop.jpg" alt="oop">
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="left"><h2>How to OOP?</h2></div>
+      </div>
+      <div class="middle">
+        <a href="assets/prime.cpp" target="_blank"><img src="assets/c++.png" alt="c++"></a>
+        <a href="assets/prime.js" target="_blank"><img src="assets/js.png" alt="js"></a>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top"></div>
+      <div class="middle">
+        <div class="center"><h1>JavaScript 怎么创建对象？</h1></div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="left"><h2>原型链</h2></div>
+      </div>
+      <div class="middle">
+        <div class="center">
+          <img width="80%" src="assets/new.jpg" alt="原型链">
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="left"><h2>Function vs. Object</h2></div>
+      </div>
+      <div class="middle">
+        <div class="center">
+          <img width="80%" src="assets/function.jpg" alt="函数和对象">
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="left"><h2>作用域</h2></div>
+      </div>
+      <div class="middle">
+        <div class="center">
+          <img src="assets/closure1.png" alt="closure">
+          <button style="display: block;margin: 1em auto;" onclick="this.parentNode.childNodes[5].style.display = 'inline';">hack it</button>
+          <img style="display: none;" src="assets/closure2.png" alt="closure hack">
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="logo"><img src="assets/logo.jpg" alt="logo"></div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="top">
+        <div class="left">
+          <h2>参考资料</h2>
+        </div>
+        <div class="left">
+          <p>《悟透 JavaScript》：<a href="https://pan.baidu.com/s/1nuUr3wH" target="_blank">https://pan.baidu.com/s/1nuUr3wH</a> 密码：fh36 <br>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="left">
+          <h2>作业</h2>
+        </div>
+        <div class="left">
+          <p>1. <b>fork</b> 这个仓库: <a href="https://github.com/OneNewLife/EMITCamp.git" target="_blank">https://github.com/OneNewLife/EMITCamp.git</a><br>
+          2. 然后切换到仓库的根目录，执行 <b>git remote add mars https://github.com/OneNewLife/EMITCamp.git</b><br>
+          3. 然后在仓库的根目录创建一个新目录，命名为你的 <b>Github</b> <b>username</b>，例如我的用户名是 <b>OneNewLife</b><br>
+             在你自己的文件夹下做作业。<br>
+          4. 每次提交代码更改之前，先执行 <b>git pull mars master</b>，然后再到 <b>Github</b> 的仓库目录发 <b>Pull Request</b>。</p>
+        </div>
+        <br>
+        <div class="left">
+          <b>作业内容：</b><br>
+          1. 用面向对象的思想实现一个科学计算器，尽可能实现更多的功能（可以参照你的手机自带的计算器来做），有能力的同学尽量实现<br>
+          图形界面。<br>
+          2. 在你的作业文件夹下做一个个人主页（博客），要求有你真实的个人介绍和一篇文章（没有字数要求），这篇文章记录你到目前为<br>
+          止学到的东西，有能力的同学可以尝试自己设计一下主题，或者尝试用别人家的主题：<br>
+          <a href="http://jekyllthemes.org" target="_blank">http://jekyllthemes.org</a><br>
+          <a href="https://hexo.io/themes" target="_blank">https://hexo.io/themes</a>
+        </div>
+        <div class="left">
+          <p><b>下周六之前交！！！</b></p>
+        </div>
+        <div class="left">
+          <p>这次作业难度不大，但是需要你多花点时间，加油吧，骚年：）</p>
+        </div>
+      </div>
+      <div class="bottom"></div>
+    </div>
+  </div>
+
+  <div id="next" class="btn"></div>
+
+  <script>
+    var slides = document.getElementsByClassName('slide');
+    var lastIndex = slides.length - 1;
+
+    window.onload = function () {
+      document.getElementById('prev').addEventListener('click', function () {
+        var currentSlide = document.getElementsByClassName('show')[0];
+        var currentIndex = Array.prototype.indexOf.call(slides, currentSlide);
+
+        if (currentIndex > 0) {
+          currentSlide.className = 'slide';
+          slides[currentIndex - 1].className = 'slide show';
+        }
+      });
+
+      document.getElementById('next').addEventListener('click', function () {
+        var currentSlide = document.getElementsByClassName('show')[0];
+        var currentIndex = Array.prototype.indexOf.call(slides, currentSlide);
+
+        if (currentIndex < lastIndex) {
+          currentSlide.className = 'slide';
+          slides[currentIndex + 1].className = 'slide show';
+        }
+      });
+    };
+
+    function hack(event) {
+      var key = event.keyCode || event.which;
+      var keychar = String.fromCharCode(key);
+
+      if (key == 37 || key == 38) {
+        var currentSlide = document.getElementsByClassName('show')[0];
+        var currentIndex = Array.prototype.indexOf.call(slides, currentSlide);
+
+        if (currentIndex > 0) {
+          currentSlide.className = 'slide';
+          slides[currentIndex - 1].className = 'slide show';
+        }
+      } else if (key == 39 || key == 40) {
+        var currentSlide = document.getElementsByClassName('show')[0];
+        var currentIndex = Array.prototype.indexOf.call(slides, currentSlide);
+
+        if (currentIndex < lastIndex) {
+          currentSlide.className = 'slide';
+          slides[currentIndex + 1].className = 'slide show';
+        }
+      }
+    };
+  </script>
+</body>
+</html>
